@@ -1,0 +1,77 @@
+# TodoBucket - Project
+
+# TodoBucket - Backend - Project
+
+- Two kind of users 
+  - Admin
+  - users
+
+- Admin have access to all routes and management
+- Users will have access to his todos only and CRUD operations
+
+- Two kind of collections will be there.
+  - Users collections
+  - Todos collections
+
+User Schema:
+{
+    "firstName": { type: String },
+    "lastName": { type: String },
+    "email": { type: String },
+    "password": { type: String }
+}
+
+Todo Schema:
+{
+    "title": { type: String },
+    "isCompleted": { type: Boolean },
+    "priority": { type: String },
+    "_ownerId": { type: ObjectId, ref: "user" }
+}
+
+Make separate routes for Explorer and Admin
+
+Explorer routes:
+
+GET:
+/api/get/todos - all todos of a user
+/api/get/todo/:_id - single todo of a user
+
+POST:
+/api/auth/user/register - register a user
+/api/auth/user/login - login a user
+
+/api/post/todo - single todo of a user created
+
+PATCH:
+/api/patch/todo/:_id - update todo of a user
+
+DELETE:
+/api/delete/todo/:_id - delete todo of a user
+/api/delete/user/:_id - delete a user profile
+
+Admin routes:
+
+GET:
+/api/get/users - all users
+/api/get/user/:_id - single user
+/api/get/user/:_id/todos - todos of a user
+/api/get/user/:_id/todo/:_id - todo of a user
+/api/get/todos - all todos
+/api/get/todos/:_id - single Todo
+
+POST:
+/api/auth/admin/register - register a admin
+/api/auth/admin/login - login a admin
+
+PATCH:
+/api/patch/admin/user/:_id - update user with admin
+/api/patch/admin/user/:_id/todo/:_id - update todo with admin
+
+/api/patch/todo/:_id - update todo with admin
+
+DELETE:
+/api/delete/admin/user/:_id - delete admin user
+/api/delete/admin/user/:_id/todo/:_id - delete todo with admin
+
+
