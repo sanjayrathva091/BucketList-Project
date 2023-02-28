@@ -11,12 +11,12 @@ const app = express();
 // use middlewares
 app.use(express.json());
 app.use(cors());
-/*
+
 app.use((req, _, next) => {
     console.log(`${req.method} ${req.originalUrl}`);
     return next();
 });
-*/
+
 // use routes
 app.use("/api/auth/explorer", explorerRoutes);
 app.use("/api/explorer", explorerRoutes);
