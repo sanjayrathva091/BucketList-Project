@@ -1,19 +1,12 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
 import "./App.css";
+import AllRoutes from "./pages/AllRoutes";
+import Navbar from "./components/Navbar";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="App">
-      <h1>{count}</h1>
-      <button
-        className="bg-sky-500 hover:bg-sky-700"
-        onClick={() => setCount(count + 1)}
-      >
-        Hello World
-      </button>
+      <Navbar />
+      <AllRoutes />
     </div>
   );
 }
